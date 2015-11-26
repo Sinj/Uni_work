@@ -1,0 +1,14 @@
+﻿Build started 24/11/2015 22:49:17.
+     1>Project "C:\Users\Quinton\Github\Uni_work\Advance AI\AAI Assessment 1\Task 1 B\Task 1 B.vcxproj" on node 4 (Rebuild target(s)).
+     1>ClCompile:
+         F:\hdd\visual studio 2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt "1 B.cpp"
+         1 B.cpp
+       Link:
+         F:\hdd\visual studio 2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Quinton\Github\Uni_work\Advance AI\AAI Assessment 1\Debug\Task 1 B.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Quinton\Github\Uni_work\Advance AI\AAI Assessment 1\Debug\Task 1 B.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Quinton\Github\Uni_work\Advance AI\AAI Assessment 1\Debug\Task 1 B.lib" /MACHINE:X86 "Debug\1 B.obj"
+     1>MSVCRTD.lib(crtexe.obj) : error LNK2019: unresolved external symbol _main referenced in function ___tmainCRTStartup
+     1>C:\Users\Quinton\Github\Uni_work\Advance AI\AAI Assessment 1\Debug\Task 1 B.exe : fatal error LNK1120: 1 unresolved externals
+     1>Done Building Project "C:\Users\Quinton\Github\Uni_work\Advance AI\AAI Assessment 1\Task 1 B\Task 1 B.vcxproj" (Rebuild target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:01.46
