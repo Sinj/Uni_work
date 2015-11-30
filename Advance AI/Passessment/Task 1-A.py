@@ -26,4 +26,4 @@ n_Test = 1 - test
 #print "Test + Not_Test = ", test + n_Test
 #print "Disease + N_Disease = ", Disease + N_Disease
 Results = t_d * Disease / test
-print "P(D|T)=P(T|D)*P(D)/P(T) \n P(D|T) = ", round(Results,6)
+print "P(D|T)=P(T|D)*P(D)/P(T) \nP(D|T) = ", round(Results,6)
