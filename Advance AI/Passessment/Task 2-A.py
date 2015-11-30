@@ -40,7 +40,7 @@ P = np.matrix('0 0.45; 0.05 0')
 # Opoo = Opee
 # print "Opoo = \n", Opoo
 
-Seq = np.array([S, P, T, O])
+Seq = np.array([S, T, O, P])
 # Seq = np.array([Omama, Opapa, Opee, Opoo])
 # print Seq[0], "test"
 # print Seq
