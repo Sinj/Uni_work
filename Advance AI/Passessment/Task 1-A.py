@@ -1,30 +1,29 @@
 # coding=utf-8
-import numpy as np
-np.set_printoptions(precision=5)
-Disease = 0.0
+import decimal as dec
 
-Disease = np.float(1/10000)#
+#Bayes rule:
+#P(A|B)=P(B|A)*P(A)/P(B)
+
+#For Disease/Test
+#P(D|T)=P(T|D)*P(D)/P(T)
+
+Disease = dec.Decimal ('0.00001')
 N_Disease = 1 - Disease
 
-print Disease
+t_d = dec.Decimal ('0.99')  # P(T|D)
+nt_d = dec.Decimal ('0.01')  # P(¬T|D)
+nt_nd = dec.Decimal ('0.95')  # P(¬T|¬D)
+t_nd = dec.Decimal ('0.05')  # P(T|¬D)
 
-Disease = 1 / 10000;  # P(D)
-N_Disease = 1 - Disease  # P(¬D)
-T_D = 0.99  # P(T|D)
-NT_D = 0.01  # P(¬T|D)
-NT_ND = 0.95  # P(¬T|¬D)
-T_ND = 0.05  # P(T|¬D)
-#                    T     ¬T
-D_table = np.matrix('0.99 0.01;'   # D
-                    ' 0.05 0.95')  # ¬D
-print D_table[1, 0]
 
-# Find T
-Test = D_table[0, 0] * Disease + D_table[1, 0] * Disease
-print Test
-Test1 = T_D * Disease + T_ND * Disease
-print Test1
-# Find T
+print 'Finding the Value of test'
+print 'P(T)=P(T|D)*P(D)+P(T|¬D)*(¬D)'
 
-# Test; //P(T)
-# n_Test; //P(¬T)
+test = t_d * Disease + t_nd * N_Disease
+print 'The Value of P(Test) = ', round(test,4)
+
+n_Test = 1 - test
+#print "Test + Not_Test = ", test + n_Test
+#print "Disease + N_Disease = ", Disease + N_Disease
+Results = t_d * Disease / test
+print "P(D|T)=P(T|D)*P(D)/P(T) \n P(D|T) = ", round(Results,6)
