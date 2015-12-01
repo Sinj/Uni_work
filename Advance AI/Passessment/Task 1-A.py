@@ -7,7 +7,7 @@ import decimal as dec # imports the decimal package and name it dec
 #For Disease/Test
 #P(D|T)=P(T|D)*P(D)/P(T)
 
-Disease = dec.Decimal ('0.00001')#P(D)
+Disease = dec.Decimal ('0.0001')#P(D)
 N_Disease = 1 - Disease #P(¬D)
 
 t_d = dec.Decimal ('0.99')  # P(T|D)

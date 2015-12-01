@@ -33,4 +33,21 @@ Seq = np.array([omama, omama, opee, opee])
 
 s0 = np.transpose(np.matrix('0.5 0.5'))
 
-HMM(Seq, t, 0, s0)
+clean = 0.4*np.max([0.5*0.5, 0.8*0.5])
+dirty = 0.1*np.max([0.5*0.5, 0.2*0.5])
+print clean
+print dirty
+normalization1 = clean/ (clean + dirty)#do once- first form nomral
+normalization2 = dirty/ (clean + dirty)#do once
+print normalization1
+print  normalization2
+m1 = np.array([normalization1, normalization2])# needs transpose ? trying with out
+print m1
+#recusion from here
+clean = 0.4*np.max([0.5*m1[0], 0.8*m1[1]])
+dirty = 0.1*np.max([0.5*0.5, 0.2*0.5])
+print clean
+print dirty
+
+
+#HMM(Seq, t, 0, s0)

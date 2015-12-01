@@ -21,12 +21,15 @@ john = np.matrix('0.9 0.1;' #A
 mary = np.matrix('0.7 0.3;'#A
                  '0.01 0.99')#¬A
 
-BJM = Burglary * john[0,0] * mary[0,0] * Earthquake * alarms[0,0]
+BJM = Burglary * john[0,0] * mary[0,0] * Earthquake * alarms[0,0]#not b not e
 N_BJM = N_Burglary * john[0,0] * mary[0,0] * Earthquake * alarms[2,0]
 
 print "BJM = ", BJM,"\nN_BJM = ",N_BJM
-
-print BJM + N_BJM
+#a being the B + everthing
+#b being ¬b
+#alptha = 1/a+b
 
 print "boo"
 
+
+print BJM + N_BJM
