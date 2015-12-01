@@ -20,16 +20,18 @@ john = np.matrix('0.9 0.1;' #A
 #                   M   ¬M
 mary = np.matrix('0.7 0.3;'#A
                  '0.01 0.99')#¬A
+#       P(b)        P(J|A)      P(M|A)        P(E)     P(A|B,E)     |    P(B)     P(J|A)      P(M|A)      P(¬E)         P(A|B,¬E)     |  P(B)        P(J|¬A)     P(M|¬A)        P(E)      P(¬A|B,E)   |  P(b)        P(J|¬A)    P(M|¬A)     P(¬E)           P(¬A|B,¬E)
+BJM = (Burglary * john[0,0] * mary[0,0] * Earthquake * alarms[0,0]) + (Burglary * john[0,0] * mary[0,0] * N_Earthquake * alarms[1,0]) + (Burglary * john[1,0] * mary[1,0] * Earthquake * alarms[0,1]) + (Burglary * john[1,0] * mary[1,0] * N_Earthquake * alarms[1,1])#not b not e
 
-BJM = Burglary * john[0,0] * mary[0,0] * Earthquake * alarms[0,0]#not b not e
-N_BJM = N_Burglary * john[0,0] * mary[0,0] * Earthquake * alarms[2,0]
+#       P(¬b)        P(J|A)      P(M|A)        P(E)        P(A|¬B,E)    |    P(¬B)      P(J|A)      P(M|A)      P(¬E)         P(A|¬B,¬E)    |  P(¬B)        P(J|¬A)     P(M|¬A)        P(E)      P(¬A|¬B,E)   |  P(¬b)        P(J|¬A)    P(M|¬A)     P(¬E)           P(¬A|¬B,¬E)
+N_BJM = (N_Burglary * john[0,0] * mary[0,0] * Earthquake * alarms[2,0]) + (N_Burglary * john[0,0] * mary[0,0] * N_Earthquake * alarms[3,0]) + (N_Burglary * john[1,0] * mary[1,0] * Earthquake * alarms[2,1]) + (N_Burglary * john[1,0] * mary[1,0] * N_Earthquake * alarms[3,1])
 
-print "BJM = ", BJM,"\nN_BJM = ",N_BJM
-#a being the B + everthing
-#b being ¬b
-#alptha = 1/a+b
+print "BJM = ", BJM, "\nN_BJM= ", N_BJM
+aplha = 1/(BJM + N_BJM)
+print aplha
 
-print "boo"
+a = aplha * BJM
+b = aplha * N_BJM
+print "a = ",a ,"\nb = ",b , "\n a + b = ",a + b
 
 
-print BJM + N_BJM
