@@ -10,7 +10,7 @@ import decimal as dec
 Disease = dec.Decimal ('0.00001')
 N_Disease = 1 - Disease
 
-t_d = dec.Decimal ('0.99')  # P(T|D)
+t_d = dec.Decimal ('0.99')  # P(T|D)S
 nt_d = dec.Decimal ('0.01')  # P(¬T|D)
 nt_nd = dec.Decimal ('0.95')  # P(¬T|¬D)
 t_nd = dec.Decimal ('0.05')  # P(T|¬D)
