@@ -1,29 +1,36 @@
 # coding=utf-8
-import decimal as dec
-
-#Bayes rule:
-#P(A|B)=P(B|A)*P(A)/P(B)
-
-#For Disease/Test
-#P(D|T)=P(T|D)*P(D)/P(T)
-
-Disease = dec.Decimal ('0.00001')
-N_Disease = 1 - Disease
-
-t_d = dec.Decimal ('0.99')  # P(T|D)
-nt_d = dec.Decimal ('0.01')  # P(¬T|D)
-nt_nd = dec.Decimal ('0.95')  # P(¬T|¬D)
-t_nd = dec.Decimal ('0.05')  # P(T|¬D)
+import numpy as np
 
 
-print 'Finding the Value of test'
-print 'P(T)=P(T|D)*P(D)+P(T|¬D)*(¬D)'
+def HMM(Seq, T, count, s):
 
-test = t_d * Disease + t_nd * N_Disease
-print 'The Value of P(Test) = ', round(test,4)
+    s = Seq[count] * T * s
+    if count < 3:
+        count += 1
+        HMM(Seq, T, count, s)
+    else:
+        print "\n sum = \n ", (s[0] + s[1])
 
-n_Test = 1 - test
-#print "Test + Not_Test = ", test + n_Test
-#print "Disease + N_Disease = ", Disease + N_Disease
-Results = t_d * Disease / test
-print "P(D|T)=P(T|D)*P(D)/P(T) \n P(D|T) = ", round(Results,6)
+
+np.set_printoptions(precision=4)  # set the display pre
+
+t = np.transpose(np.matrix('0.5, 0.5; 0.8, 0.2'))
+
+
+
+omama = np.matrix('0.4 0; 0 0.1')
+
+opapa = omama
+
+opee = np.matrix('0.1 0; 0 0.4')
+
+opoo = opee
+
+
+
+Seq = np.array([omama, omama, opee, opee])
+
+
+s0 = np.transpose(np.matrix('0.5 0.5'))
+
+HMM(Seq, t, 0, s0)
