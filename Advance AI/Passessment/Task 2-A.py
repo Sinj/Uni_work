@@ -18,14 +18,14 @@ t = np.transpose(np.matrix('0.75, 0.25; 0.25, 0.75'))
 
 S = np.matrix('0.45 0; 0 0.05')
 
-T = np.matrix('0.05 0; 0 0.45')
+P = np.matrix('0 0.45; 0.05 0')
 
 O = np.matrix('0 0.05; 0.45 0')
 
-P = np.matrix('0 0.45; 0.05 0')
-
-Seq = np.array([S, T, O, P])
+T = np.matrix('0.05 0; 0 0.45')
 
 s0 = np.transpose(np.matrix('0.75 0.25'))
+
+Seq = np.array([S, T, O, P])
 
 HMM(Seq, t, 0, s0)

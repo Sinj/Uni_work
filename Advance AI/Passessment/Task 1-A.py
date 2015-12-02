@@ -17,10 +17,10 @@ t_nd = dec.Decimal ('0.05')  # P(T|¬D)
 
 
 print 'Finding the Value of test'
-print 'P(T)=P(T|D)*P(D)+P(T|¬D)*(¬D)'
+print 'P(T)=P(T|D)*P(D)+P(T|¬D)*P(¬D)'
 
 test = t_d * Disease + t_nd * N_Disease
-print 'The Value of P(Test) = ', round(test,4)
+print 'The Value of P(Test) = ', round(test,3)
 
 n_Test = 1 - test
 

@@ -1,7 +1,6 @@
 # coding=utf-8
 
 import numpy as np
-import decimal as dec
 
 Burglary = 0.001
 N_Burglary = 1 - Burglary
