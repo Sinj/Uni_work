@@ -45,9 +45,24 @@ m1 = np.array([normalization1, normalization2])# needs transpose ? trying with o
 print m1
 #recusion from here
 clean = 0.4*np.max([0.5*m1[0], 0.8*m1[1]])
-dirty = 0.1*np.max([0.5*0.5, 0.2*0.5])
+dirty = 0.1*np.max([0.5*m1[0], 0.2*m1[1]])
 print clean
 print dirty
-
+m2 = np.array([clean, dirty])
+print m2
+#--
+clean = 0.1*np.max([0.5*m2[0], 0.8*m2[1]])
+dirty = 0.4*np.max([0.5*m2[0], 0.2*m2[1]])
+print clean
+print dirty
+m3 = np.array([clean, dirty])
+print m3
+#---
+clean = 0.1*np.max([0.5*m3[0], 0.8*m3[1]])
+dirty = 0.4*np.max([0.5*m3[0], 0.2*m3[1]])
+print clean
+print dirty
+m4 = np.array([clean, dirty])
+print round(m4[0],3),round(m4[1],3)
 
 #HMM(Seq, t, 0, s0)

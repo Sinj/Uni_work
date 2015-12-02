@@ -1,6 +1,7 @@
 # coding=utf-8
 
 import numpy as np
+import decimal as dec
 
 Burglary = 0.001
 N_Burglary = 1 - Burglary
@@ -30,8 +31,8 @@ print "BJM = ", BJM, "\nN_BJM= ", N_BJM
 aplha = 1/(BJM + N_BJM)
 print aplha
 
-a = aplha * BJM
-b = aplha * N_BJM
-print "a = ",a ,"\nb = ",b , "\n a + b = ",a + b
+BJM = aplha * BJM
+N_BJM = aplha * N_BJM
+print "a = ",round(BJM,3) ,"\nb = ",round(N_BJM,3) , "\na + b = ",BJM + N_BJM
 
 
