@@ -16,13 +16,13 @@ nt_nd = dec.Decimal ('0.95')  # P(¬T|¬D)
 t_nd = dec.Decimal ('0.05')  # P(T|¬D)
 
 
-print 'Finding the Value of test'
+print 'Finding the Value of P(T)'
 print 'P(T)=P(T|D)*P(D)+P(T|¬D)*P(¬D)'
 
 test = t_d * Disease + t_nd * N_Disease
-print 'The Value of P(Test) = ', round(test,3)
+print 'The Value of P(T) = ', round(test,3)
 
 n_Test = 1 - test
 
 Results = t_d * Disease / test
-print "P(D|T)=P(T|D)*P(D)/P(T) \nP(D|T) = ", round(Results,6)
+print "\nP(D|T)=P(T|D)*P(D)/P(T) \nP(D|T) = ", round(Results,6)
