@@ -23,7 +23,7 @@ mary = np.matrix('0.7 0.3;'#A
 #       P(b)        P(J|A)      P(M|A)        P(E)     P(A|B,E)     +    P(B)     P(J|A)      P(M|A)      P(¬E)         P(A|B,¬E)     +  P(B)        P(J|¬A)     P(M|¬A)        P(E)      P(¬A|B,E)   +  P(b)        P(J|¬A)    P(M|¬A)     P(¬E)           P(¬A|B,¬E)
 BJM = (Burglary * john[0,0] * mary[0,0] * Earthquake * alarms[0,0]) + (Burglary * john[0,0] * mary[0,0] * N_Earthquake * alarms[1,0]) + (Burglary * john[1,0] * mary[1,0] * Earthquake * alarms[0,1]) + (Burglary * john[1,0] * mary[1,0] * N_Earthquake * alarms[1,1])
 
-#       P(¬b)        P(J|A)      P(M|A)        P(E)        P(A|¬B,E)    |    P(¬B)      P(J|A)      P(M|A)      P(¬E)         P(A|¬B,¬E)    |  P(¬B)        P(J|¬A)     P(M|¬A)        P(E)      P(¬A|¬B,E)   |  P(¬b)        P(J|¬A)    P(M|¬A)     P(¬E)           P(¬A|¬B,¬E)
+#       P(¬b)        P(J|A)      P(M|A)        P(E)        P(A|¬B,E)    +    P(¬B)      P(J|A)      P(M|A)      P(¬E)         P(A|¬B,¬E)    +  P(¬B)        P(J|¬A)     P(M|¬A)        P(E)      P(¬A|¬B,E)   +  P(¬b)        P(J|¬A)    P(M|¬A)     P(¬E)           P(¬A|¬B,¬E)
 N_BJM = (N_Burglary * john[0,0] * mary[0,0] * Earthquake * alarms[2,0]) + (N_Burglary * john[0,0] * mary[0,0] * N_Earthquake * alarms[3,0]) + (N_Burglary * john[1,0] * mary[1,0] * Earthquake * alarms[2,1]) + (N_Burglary * john[1,0] * mary[1,0] * N_Earthquake * alarms[3,1])
 
 print "BJM = ",BJM, "\nN_BJM = ",N_BJM
@@ -32,6 +32,10 @@ print "alpha = ",alpha
 
 BJM = alpha * BJM
 N_BJM = alpha * N_BJM
-print "P(B|J,M) = ",round(BJM,3) ,"\nP(¬B|J,M) = ",round(N_BJM,3) , "\nprove that both are correct by adding P(B|J,M) and P(¬B|J,M) should make 1 \nP(B|J,M) + P(¬B|J,M) = ",BJM + N_BJM
+print "P(B|J,M) = BJM * alpha \nP(¬B|J,M) = N_BJM * alpha"
+print "P(B|J,M) = ",round(BJM,3) \
+    ,"\nP(¬B|J,M) = ",round(N_BJM,3) \
+    ,"\nprove that both are correct by adding P(B|J,M) and P(¬B|J,M) should make 1 \nP(B|J,M) + P(¬B|J,M) = ",BJM + N_BJM
+print "\nThe probability of a burglary given that both john and mary call is",round(BJM,3)
 
 
